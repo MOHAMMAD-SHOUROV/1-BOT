@@ -75,7 +75,8 @@ module.exports = {
         const name = await Users.getNameUser(events.senderID);
         const rand = greetings[Math.floor(Math.random() * greetings.length)];
         return nayan.reply({
-          body: `╭•┄┅═══❁🌺❁═══┅┄•╮\n✨ ${name},\n\n『 ${rand} 』\n\n📅 ${time}\n❤️ 𝗔𝗗𝗠𝗜𝗡 : 𝗖𝗬𝗕𝗘𝗥~𝐒𝐇𝐎𝐔𝐑𝐎𝐕 🌸\n╰•┄┅═══❁🌺❁═══┅┄•╯`}]
+          body: `$`╭•┄┅═══❁🌺❁═══┅┄•╮\n✨ ${name},\n\n『 ${rand} 』\n\n📅 ${time}\n❤️ 𝗔𝗗𝗠𝗜𝗡 : 𝗖𝗬𝗕𝗘𝗥~𝐒𝐇𝐎𝐔𝐑𝐎𝐕 🌸\n╰•┄┅═══❁🌺❁═══┅┄•╯`,
+          mentions: [{ tag: name, id: events.senderID }]
         }, events.threadID, (error, info) => {
           if (error) {
             return nayan.reply('An error occurred while processing your request. Please try again later.', events.threadID, events.messageID);
